@@ -11,7 +11,7 @@ fi
 
 #generate the log file 
 sstring=$1 #search string
-count=0
+count=0 #counter variable
 LIMIT=10
 
 while [ "$count" -lt "$LIMIT" ]
