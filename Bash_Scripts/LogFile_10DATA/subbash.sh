@@ -2,12 +2,16 @@
 
 FILE="/home/jass/words.txt"
 
-echo "Device Name ="
 uname
-echo "Date: "
+
 date
 
-while read line; do
-# reading each line
+line="$( grep "word" -m $FILE)"
 echo "$line"
-done < $FILE
+
+#head -n $n $FILE
+
+#while read line; do
+# reading each line
+#echo "$line"
+#done < $FILE

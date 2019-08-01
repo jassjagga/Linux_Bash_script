@@ -1,8 +1,7 @@
 #!/bin/bash
 
-SUB="/home/jass/subbash.sh"
+SUB="/home/jass/GitHub/Linux_Bash_script/Bash_Scripts/LogFile_10DATA/subbash.sh"
 while true; do
-
     today="$( date +"%s" )"
     number=0
     fname=$today.txt
