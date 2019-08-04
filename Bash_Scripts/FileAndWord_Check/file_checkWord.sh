@@ -8,7 +8,7 @@ echo "File exist"
 else
 echo "File is not exist"
 fi
-
+#grep command used with wordcount 
 WORD_CONT=$(grep -i -o $WORD $FILE | wc -l)
 
 if [ "$WORD_CONT" -ne "$NOWORD" ]
