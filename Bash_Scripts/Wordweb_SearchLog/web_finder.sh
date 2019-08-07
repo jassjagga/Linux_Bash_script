@@ -22,7 +22,7 @@ do
    touch "tempvar.txt"
    touch "temp2.txt"
    #this will make the file in format of eg [log_MM-DD-YYYY_Nanoseconds.txt] 
-   touch "log_$datestr_$dateNstr.txt"
+   touch "log_$datestr.txt"
    #read the file word.txt and take the one word at a time
    grep -m `expr $count + 1` $sstring words.txt | tail -1 >> tempvar.txt
 
