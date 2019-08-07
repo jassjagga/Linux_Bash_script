@@ -40,7 +40,7 @@ else
    head -n 1 temp2.txt|tail -c 18 >> log_$datestr.txt 
 fi
  
-sleep 2 #wait for 10 seconds
+sleep 2 #wait for 2 seconds
 count=`expr $count + 1`
    rm tempvar.txt
    rm temp2.txt
