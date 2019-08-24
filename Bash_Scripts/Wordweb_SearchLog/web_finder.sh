@@ -19,31 +19,33 @@ do
     datestr=`date +%m-%d-%Y_%N` #generate date like this eg[08-01-2019_15435535]means [Month-day-year_nanoseconds]
 
    #just temporary files to store the word of dict. and other for ip address and all web deatial
-   touch "tempvar.txt"
+   #touch "tempvar.txt"
    touch "temp2.txt"
    #this will make the file in format of eg [log_MM-DD-YYYY_Nanoseconds.txt] 
-   touch "log_$datestr_$dateNstr.txt"
+   touch "log_$datestr.txt"
    #read the file word.txt and take the one word at a time
-   grep -m `expr $count + 1` $sstring words.txt | tail -1 >> tempvar.txt
+   #grep -m `expr $count + 1` $sstring words.txt | tail -1 >> tempvar.txt
 
-   host www."$( cat tempvar.txt )".com >> temp2.txt
-
-   cat tempvar.txt >> log_$datestr.txt
-
+   #host www."$( cat tempvar.txt )".com >> temp2.txt
+   host www."$(grep -m `expr $count + 1` $sstring words.txt | tail -1 )".com >>temp2.txt
+   #cat tempvar.txt >> log_$datestr.txt
+   uname >> log_$datestr.txt
+   date >> log_$datestr.txt
 
 Found="$( grep -o "found" temp2.txt )"
 YES="found"
-if [ "$Found" ==  "$YES" ]
-then
+ if [ "$Found" ==  "$YES" ]
+ then
     echo "NO Such Web Found"  >> log_$datestr.txt
-else
-   head -n 1 temp2.txt|tail -c 18 >> log_$datestr.txt 
-fi
+ else
+    head -n 1 temp2.txt|tail -c 18 >> log_$datestr.txt 
+ fi
  
 sleep 2 #wait for 10 seconds
 count=`expr $count + 1`
-   rm tempvar.txt
+   #rm tempvar.txt
    rm temp2.txt
-done #while
-echo
+ done #while
+   echo
 exit 0
+
