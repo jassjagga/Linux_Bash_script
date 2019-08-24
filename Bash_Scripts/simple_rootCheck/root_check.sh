@@ -1,9 +1,9 @@
 #!/bin/bash
 
-UNROOT=1000
-if [ "$UID" -ne "$UNROOT" ]
+ROOT=0
+if [ "$UID" -ne "$ROOT" ]
 then
-echo "user is root "
+echo "user is not root "
 else
-echo "user is not root"
+echo "user is root"
 fi
