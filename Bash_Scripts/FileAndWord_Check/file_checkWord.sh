@@ -19,6 +19,7 @@ echo "Exit!!!!!"
 exit
 fi
 
+
 FILE=$1
 WORD=$2
 NOWORD=0
